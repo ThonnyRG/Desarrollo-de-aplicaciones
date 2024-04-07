@@ -1,18 +1,16 @@
-package mx.uv.coatza.todo.model;
+package mx.uv.coatza.todo.dto;
 
-public class todo {    
+public class TodoDTO {
     private int id;
     private String title;
     private String description;
     private boolean completed;
 
-
-
-    public todo(int id, String title, String description, boolean completed) {
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
         this.id = id;
-        this.title = title;
-        this.description = description;
-        this.completed = completed;
     }
     public String getTitle() {
         return title;
@@ -31,12 +29,6 @@ public class todo {
     }
     public void setCompleted(boolean completed) {
         this.completed = completed;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
 
     
