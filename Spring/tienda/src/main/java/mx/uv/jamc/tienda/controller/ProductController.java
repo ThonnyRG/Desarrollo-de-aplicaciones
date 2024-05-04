@@ -2,28 +2,33 @@ package mx.uv.jamc.tienda.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mx.uv.jamc.tienda.dto.CreateProductoDTO;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import mx.uv.jamc.tienda.dto.CreateProductDTO;
 import mx.uv.jamc.tienda.dto.ProductDTO;
 import mx.uv.jamc.tienda.service.ProductService;
 
 @RestController
+@Slf4j
 public class ProductController {
+
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/trucoTeca")
-    public List<ProductDTO> getAll(){
+    @RequestMapping("/trucoteca")
+    public List<ProductDTO> getAll() {
         return productService.getAll();
     }
-    @RequestMapping("/createProductos")
-    public ProductDTO save(@Valid @RequestBody CreateProductoDTO data){
+
+    @RequestMapping("/crearProductos")
+    public ProductDTO save(@Valid @RequestBody CreateProductDTO data) {
+        log.info("Ejcutando el guardado de un producto", data );
+        log.info(data.toString());
         return productService.save(data);
     }
 }
