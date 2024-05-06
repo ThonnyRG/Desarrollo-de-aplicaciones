@@ -1,5 +1,6 @@
 package com.uv.jamc.clases;
 
+import java.util.Scanner;
 
 /* 
  1) Mostrar una tabla, 2) Mostrar tablas del 2 al 5, 3) Salir
@@ -11,5 +12,9 @@ public class Menu {
         System.out.println("1.-Mostrar tabla");
         System.out.println("2.-Mostrar tablas del 2 al 5");
         System.out.println("3.-Salir");
+        MenuFunc menuFunc = new MenuFunc();
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        menuFunc.switchCase(num);
     }
 }
