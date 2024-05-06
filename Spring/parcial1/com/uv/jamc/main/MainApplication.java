@@ -2,6 +2,8 @@ package com.uv.jamc.main;
 
 import java.util.Scanner;
 
+import com.uv.jamc.clases.Menu;
+
 //import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,8 +16,8 @@ public class MainApplication {
 		Scanner input = new Scanner(System.in);
 		//SpringApplication.run(MainApplication.class, args);
 		System.out.println("Ola");
-		Tablas tablas = new Tablas();
-		tablas.mostrar(2);
+		Menu menu = new Menu();
+		menu.msgMenu();
 	}
 
 }
